@@ -1,37 +1,41 @@
-// src/components/routes/DetailsForm.js
-
-import React from 'react';
+import React, { useState } from 'react';
 import './DetailsForm.css';
 
 const DetailsForm = () => {
-  const handleSubmit = async (event) => {
-    event.preventDefault();
+  const [formData, setFormData] = useState({
+    name: '',
+    phone: '',
+    email: '',
+    treatment: '',
+    location: '',
+  });
 
-    const formData = new FormData(event.target);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
     try {
-      const response = await fetch('http://your-backend-api', {
+      const response = await fetch('Backend_url', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-          name: formData.get('name'),
-          phone: formData.get('phone'),
-          email: formData.get('email'),
-          treatment: formData.get('treatment'),
-          location: formData.get('location'),
-        }),
+        body: JSON.stringify(formData),
       });
 
       if (response.ok) {
-        console.log('success');
+        console.log('User details submitted successfully');
+        // You can show a success message or redirect the user here
       } else {
-        console.log('failed');
+        console.error('Failed to submit user details');
+        // You can show an error message here
       }
     } catch (error) {
-      console.error('Error submitting form:', error);
+      console.error('Error submitting user details:', error);
     }
+  };
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   return (
@@ -39,11 +43,11 @@ const DetailsForm = () => {
       <div className="form-part">
         <form id="form-section" onSubmit={handleSubmit}>
           <h1 className="head">Our Experts Have All The Answers For You</h1>
-          <input type="text" placeholder="Your Name" name="name" />
-          <input type="tel" placeholder="Phone Number" name="phone" />
-          <input type="email" placeholder="Email Address" name="email" />
-          <input type="text" placeholder="Treatment" name="treatment" />
-          <input type="text" placeholder="Location" name="location" />
+          <input type="text" placeholder="Your Name" name="name" onChange={handleChange} />
+          <input type="tel" placeholder="Phone Number" name="phone" onChange={handleChange} />
+          <input type="email" placeholder="Email Address" name="email" onChange={handleChange} />
+          <input type="text" placeholder="Treatment" name="treatment" onChange={handleChange} />
+          <input type="text" placeholder="Location" name="location" onChange={handleChange} />
           <button type="submit">Submit</button>
         </form>
       </div>
