@@ -1,0 +1,78 @@
+/* src/components/routes/DetailsForm.css */
+
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 100vh;
+}
+
+.image-part{
+    /* width: 35%; */
+    margin-top : 150px;
+    margin-right: 50px;
+    background-size: cover; 
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+}
+
+.form-part{
+    /* width: 65%;  */
+    margin-right: 50px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+    justify-content: center; /* Center content vertically */
+    color:white;
+}
+
+.head {
+    margin-bottom: 100px; 
+    margin-left: 15px;
+    padding-left:30px;
+    font-size: 2rem;
+    font-style: italic;
+    font-style: bold;
+    color: white;
+}
+
+
+button {
+    width:20%;
+    background-color: red;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin-left: 35%;
+    margin-top:10px;
+    border-radius: 10px;
+    height: 40px;
+    padding: 5px;
+
+}
+
+button:hover {
+    background-color: blue;
+}
+
+
+input{
+    width: 80%;
+    padding: 10px;
+    margin-bottom:10px;
+    border:0;
+    outline: 0;
+    margin-left: 40px;
+    background-color: rgb(4, 4, 49);
+    border-bottom: 1px solid white;
+    color:white; 
+}
+
+input:hover{
+    background-color: red;
+    color:white;
+}
