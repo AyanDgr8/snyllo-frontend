@@ -69,6 +69,12 @@ const DetailsForm = () => {
 
   return (
     <div className="container">
+      <div className="image-part">
+        <img
+          src="https://img.freepik.com/free-photo/young-naked-woman-sitting-floor-body-skin-care-concept_144627-19367.jpg"
+          alt="Lady"
+        />
+      </div>
       <div className="form-part">
         <form id="form-section" onSubmit={handleSubmit}>
           <h1 className="head">Our Experts Have All The Answers For You</h1>
@@ -115,20 +121,9 @@ const DetailsForm = () => {
           </p>
         )}
       </div>
-      <div className="image-part">
-        <img
-          src="https://img.freepik.com/free-photo/young-naked-woman-sitting-floor-body-skin-care-concept_144627-19367.jpg"
-          alt="Lady"
-          style={imageStyle}
-        />
-      </div>
     </div>
   );
 };
 
-const imageStyle = {
-  width: '100%',
-  maxWidth: '350px',
-};
 
 export default DetailsForm;
