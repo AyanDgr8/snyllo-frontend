@@ -69,6 +69,9 @@ body {
 }
 
 .header-container {
+  margin-left:8%;
+  margin-right:10%;
+  width:85%;
   display: flex;
   background-color: grey;
   flex-direction: column; /* Change to column for smaller screens */
